@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -10,12 +11,12 @@
 
 <BorderPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
    <top>
-      <MenuBar prefHeight="0.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+      <MenuBar prefHeight="0.0" prefWidth="750.0" BorderPane.alignment="CENTER">	
         <menus>
           <Menu mnemonicParsing="false" text="Articulos">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#abrirFormulario" text="Añadir" />
-              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Inicio" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirFormulario" text="Articulos" />
+              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -34,6 +35,7 @@
    <center>
       <VBox alignment="CENTER" prefHeight="659.0" prefWidth="750.0" BorderPane.alignment="CENTER">
          <children>
+            <DialogPane />
             <Label text="Bienvenido a SupermarketBBDD">
                <font>
                   <Font size="36.0" />
