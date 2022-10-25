@@ -5,6 +5,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -131,7 +132,10 @@
       </GridPane>
    </center>
    <top>
-      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="756.0" BorderPane.alignment="CENTER" />
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="756.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Actualizar,Busquedas" />
+         </children></HBox>
    </top>
    <bottom>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
@@ -199,7 +203,35 @@
                   </CheckBox>
                </children>
             </GridPane>
-            <GridPane prefHeight="126.0" prefWidth="768.0">
+            <GridPane prefHeight="49.0" prefWidth="747.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tarifa.Costo">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Text>
+                  <TextField>
+                     <GridPane.margin>
+                        <Insets left="80.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Coste.Medio" GridPane.columnIndex="1" />
+                  <TextField GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="80.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane prefHeight="91.0" prefWidth="746.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -210,56 +242,47 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-                     <GridPane.margin>
-                        <Insets left="10.0" />
-                     </GridPane.margin></Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pvp.Oferta" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tarifa.Vta1" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tarifa.Vta2" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="\%Mg.ComVta2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="\%Mg.Com.Vta1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="\%Mg.Com.Oferta" GridPane.columnIndex="1" />
                   <TextField>
                      <GridPane.margin>
-                        <Insets left="40.0" right="20.0" />
+                        <Insets left="70.0" right="60.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="10.0" />
-                     </GridPane.margin></Text>
-                  <TextField GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="40.0" right="20.0" />
-                     </GridPane.margin>
-                  </TextField>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets left="10.0" />
-                     </GridPane.margin></Text>
                   <TextField GridPane.rowIndex="2">
                      <GridPane.margin>
-                        <Insets left="40.0" right="20.0" />
+                        <Insets left="70.0" right="60.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="1">
+                  <TextField GridPane.rowIndex="1">
                      <GridPane.margin>
-                        <Insets left="40.0" right="20.0" />
+                        <Insets left="70.0" right="60.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label text="Label" GridPane.columnIndex="1">
                      <GridPane.margin>
-                        <Insets left="40.0" right="20.0" />
+                        <Insets left="140.0" />
                      </GridPane.margin>
-                  </TextField>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  </Label>
+                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
-                        <Insets left="40.0" right="20.0" />
+                        <Insets left="140.0" />
                      </GridPane.margin>
-                  </TextField>
+                  </Label>
+                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="140.0" />
+                     </GridPane.margin>
+                  </Label>
                </children>
             </GridPane>
-            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" text="Button" VBox.vgrow="SOMETIMES">
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" text="Aceptar" VBox.vgrow="SOMETIMES">
                <VBox.margin>
-                  <Insets left="685.0" />
+                  <Insets bottom="5.0" left="685.0" />
                </VBox.margin></Button>
          </children>
       </VBox>

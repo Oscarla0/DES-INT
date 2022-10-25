@@ -15,12 +15,14 @@ public class Person {
     private final SimpleStringProperty lastName;
     private final SimpleStringProperty email;
     private final SimpleIntegerProperty age;
+    private final SimpleStringProperty familia;
  
-    public Person(String fName, String lName, String email, Integer age) {
+    public Person(String fName, String lName, String email, Integer age,String family) {
         this.firstName = new SimpleStringProperty(fName);
         this.lastName = new SimpleStringProperty(lName);
         this.email = new SimpleStringProperty(email);
         this.age = new SimpleIntegerProperty(age);
+		this.familia = new SimpleStringProperty(family);
     }
  
     public String getFirstName() {
@@ -52,4 +54,10 @@ public class Person {
 		age.set(fAge);
     }        
         
+    public String getFamilia() {
+		return familia.get();
+	}
+	public void setFamilia(String family) {
+		familia.set(family);
+	}
 }

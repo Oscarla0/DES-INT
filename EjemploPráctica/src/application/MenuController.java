@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 
 
 public class MenuController {
@@ -25,6 +26,21 @@ public class MenuController {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MenuController.class.getResource("/basicoDinamico/Articulos.fxml"));
 			BorderPane listadoControles = (BorderPane) loader.load();
+
+			// Se sitúa en el centro del diseño principal
+			rootLayout.setCenter(listadoControles);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    @FXML
+    private void abrirListado(ActionEvent event) {    	
+    	try {
+			// Cargamos el archivo Controles Dinámicos
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MenuController.class.getResource("/basicoDinamico/Lista_Productos.fxml"));
+			GridPane listadoControles = (GridPane) loader.load();
 
 			// Se sitúa en el centro del diseño principal
 			rootLayout.setCenter(listadoControles);

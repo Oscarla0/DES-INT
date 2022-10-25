@@ -46,11 +46,11 @@ public class ListController {
     
      // Lista auxiliar para TableView
     private ObservableList<Person> data = FXCollections.observableArrayList(
-    	    new Person("Jacob", "Smith", "jacob.smith@example.com", 30),
-    	    new Person("Isabella", "Johnson", "isabella.johnson@example.com", 40),
-    	    new Person("Ethan", "Williams", "ethan.williams@example.com", 50),
-    	    new Person("Emma", "Jones", "emma.jones@example.com", 61),
-    	    new Person("Michael", "Brown", "michael.brown@example.com", 34)
+    	    new Person("Jacob", "Smith", "jacob.smith@example.com", 30,"Oscar"),
+    	    new Person("Isabella", "Johnson", "isabella.johnson@example.com", 40,"Oscar"),
+    	    new Person("Ethan", "Williams", "ethan.williams@example.com", 50,"Oscar"),
+    	    new Person("Emma", "Jones", "emma.jones@example.com", 61,"Oscar"),
+    	    new Person("Michael", "Brown", "michael.brown@example.com", 34,"Oscar")
     	);
 
     @FXML

@@ -40,40 +40,24 @@ public class ArticuloController {
 
 	    @FXML
 	    private ChoiceBox<String> ChoiceUVenta;
-    
-     // Lista auxiliar para TableView
-    private ObservableList<Person> data = FXCollections.observableArrayList(
-    	    new Person("Jacob", "Smith", "jacob.smith@example.com", 30),
-    	    new Person("Isabella", "Johnson", "isabella.johnson@example.com", 40),
-    	    new Person("Ethan", "Williams", "ethan.williams@example.com", 50),
-    	    new Person("Emma", "Jones", "emma.jones@example.com", 61),
-    	    new Person("Michael", "Brown", "michael.brown@example.com", 34)
-    	);
 
     @FXML
     private void initialize() {   
         // Controles de JavaFX a los que se añaden directamente los items 
     	// Ítems del ChoiceBox
-    	ChoiceDptTpv.getItems().addAll("Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
-        		"Choice6", "Choice7", "Choice8", "Choice9");      
-    	ChoiceFamilia.getItems().addAll("Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
+    	ChoiceDptTpv.getItems().addAll("","Alimentacion", "Bazar", "Bebidas", "Bodega", "Bolleria", 
+        		"Carniceria", "Cerveza");      
+    	ChoiceFamilia.getItems().addAll("","Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
         		"Choice6", "Choice7", "Choice8", "Choice9"); 
-    	ChoiceGrupos.getItems().addAll("Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
-        		"Choice6", "Choice7", "Choice8", "Choice9"); 
-    	ChoiceImptoCompra.getItems().addAll("Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
-        		"Choice6", "Choice7", "Choice8", "Choice9"); 
-    	ChoiceImptoVenta.getItems().addAll("Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
-        		"Choice6", "Choice7", "Choice8", "Choice9"); 
-    	ChoiceSeccion.getItems().addAll("Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
-        		"Choice6", "Choice7", "Choice8", "Choice9"); 
-    	ChoiceUCom.getItems().addAll("Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
-        		"Choice6", "Choice7", "Choice8", "Choice9"); 
-    	ChoiceUVenta.getItems().addAll("Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
-        		"Choice6", "Choice7", "Choice8", "Choice9"); 
-    	
-    	
-        
-        // Ítems del ComboBox
+    	ChoiceGrupos.getItems().addAll("","Mercaria", "Panaderia y Pasteleria ", "Pescado y Moriscos", "Queso", "Cerrajeria Herrajes", 
+        		"Peleteria", "Completos"); 
+    	ChoiceImptoCompra.getItems().addAll("","4%", "10%", "15%"); 
+    	ChoiceImptoVenta.getItems().addAll("","10%", "15%", "21%"); 
+    	ChoiceSeccion.getItems().addAll("","Aceites", "Alimentos Animales", "Aperitivos", "Azucar y edulcorante", "Cacao", 
+        		"Arroces", "Galletas", "Choice8", "Choice9"); 
+    	ChoiceUCom.getItems().addAll("","1", "2", "3", "4"); 
+    	ChoiceUVenta.getItems().addAll("","1", "2", "3", "4", "5", 
+        		"6", "7", "8"); 
                
     }
     
