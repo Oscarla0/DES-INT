@@ -22,7 +22,6 @@
           <Menu mnemonicParsing="false" text="Articulos">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#abrirListado" text="Listado" />
-              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
