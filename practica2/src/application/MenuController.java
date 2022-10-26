@@ -1,12 +1,17 @@
 package application;
 
+import java.io.Closeable;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 
 public class MenuController {
@@ -48,7 +53,8 @@ public class MenuController {
 			e.printStackTrace();
 		}
     }
-    
+
+	
     @FXML
     private void cerrarListado(ActionEvent event) {    	
     	// Se elimina el contenido del nodo central
