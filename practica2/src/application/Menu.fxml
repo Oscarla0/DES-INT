@@ -21,8 +21,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Productos">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#abrirListado" text="Listado" />
-                  <MenuItem mnemonicParsing="false" onAction="#abrirListado1" text="Prueba" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirListado1" text="Listado" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

@@ -34,6 +34,7 @@ public class ListadoController {
     @FXML
     private TableColumn<Person, String> famColumn; 
      // Lista auxiliar para TableView
+    int x =0;
     private ObservableList<Person> data = FXCollections.observableArrayList(
     	    new Person("Cocacola", "4894x1564", "Bebida", 30,"Refresco con Gas"),
     	    new Person("Bezoya", "x16461894", "Bebida", 40,"Agua"),

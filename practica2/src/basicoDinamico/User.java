@@ -6,16 +6,17 @@ import javafx.scene.control.Button;
 public class User {
 
     /*Add the strings and buttons to be used in the application*/
-    String id, name, email, notes;
+    String id, name, codigo, grupo,cantidad,familia;
 
     Button update;
 
     /* Constructors */
-    public User(String id, String name, String email, String notes, Button update) {
+    public User(String id, String name, String codigo, String grupo,String familia, String string, Button update) {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.notes = notes;
+        this.codigo = codigo;
+        this.grupo = grupo;
+        this.familia=familia;
         this.update = update;
 
         update.setOnAction(e -> {
@@ -24,15 +25,18 @@ public class User {
             for (User user : users) {
                 if (user.getUpdate() == update) {
                     System.out.println("id: " + user.getId());
-                    System.out.println("name: " + user.getName());
-                    System.out.println("email: " + user.getEmail());
-                    System.out.println("notes: " + user.getNotes());
+                    System.out.println("Nombre: " + user.getName());
+                    System.out.println("Codigo: " + user.getCodigo());
+                    System.out.println("Grupo: " + user.getGrupo());
+                    System.out.println("Familia: " + user.getFamilia());
+                    
                 }
             }
         });
     }
 
-    /* Getters and setters */
+
+	/* Getters and setters */
     public String getId() {
         return id;
     }
@@ -49,23 +53,48 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public String getCodigo() {
+		return codigo;
+	}
 
-    public String getNotes() {
-        return notes;
-    }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
 
-    public Button getUpdate() {
+
+	public String getGrupo() {
+		return grupo;
+	}
+
+
+	public void setGrupo(String grupo) {
+		this.grupo = grupo;
+	}
+
+
+	public String getCantidad() {
+		return cantidad;
+	}
+
+
+	public void setCantidad(String cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
+	public String getFamilia() {
+		return familia;
+	}
+
+
+	public void setFamilia(String familia) {
+		this.familia = familia;
+	}
+
+
+	public Button getUpdate() {
         return update;
     }
 }
