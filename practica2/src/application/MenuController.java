@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -44,7 +45,7 @@ public class MenuController {
     	try {
 			// Cargamos el archivo Controles Dinámicos
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("/basicoDinamico/helloview.fxml"));
+			loader.setLocation(MenuController.class.getResource("/basicoDinamico/Tabla.fxml"));
 			BorderPane listadoControles = (BorderPane) loader.load();
 
 			// Se sitúa en el centro del diseño principal
@@ -53,7 +54,20 @@ public class MenuController {
 			e.printStackTrace();
 		}
     }
+    @FXML
+    private void abrirListado2(ActionEvent event) {    	
+    	try {
+			// Cargamos el archivo Controles Dinámicos
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MenuController.class.getResource("/basicoDinamico/Sobre.fxml"));
+			AnchorPane listadoControles = (AnchorPane) loader.load();
 
+			// Se sitúa en el centro del diseño principal
+			rootLayout.setCenter(listadoControles);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
 	
     @FXML
     private void cerrarListado(ActionEvent event) {    	

@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="basicoDinamico.ArticuloController">
@@ -134,7 +135,10 @@
    <top>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="756.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Actualizar,Busquedas" />
+            <Label text="Ingresar">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font></Label>
          </children></HBox>
    </top>
    <bottom>
@@ -263,21 +267,6 @@
                         <Insets left="70.0" right="60.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="Label" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets left="140.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="140.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets left="140.0" />
-                     </GridPane.margin>
-                  </Label>
                </children>
             </GridPane>
             <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" text="Aceptar" VBox.vgrow="SOMETIMES">

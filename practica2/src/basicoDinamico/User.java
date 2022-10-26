@@ -20,7 +20,7 @@ public class User {
         this.update = update;
 
         update.setOnAction(e -> {
-            ObservableList<User> users = HelloController.table_info_app.getSelectionModel().getSelectedItems();
+            ObservableList<User> users = TablaController.table_info_app.getSelectionModel().getSelectedItems();
 
             for (User user : users) {
                 if (user.getUpdate() == update) {

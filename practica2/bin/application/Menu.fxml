@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -16,7 +18,7 @@
           <Menu mnemonicParsing="false" text="Articulos">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#abrirFormulario" text="Articulos" />
-              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Inicio" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Productos">
@@ -24,9 +26,9 @@
                   <MenuItem mnemonicParsing="false" onAction="#abrirListado1" text="Listado" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Ayuda">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#abrirListado2" text="Sobre" />
             </items>
           </Menu>
         </menus>
@@ -35,12 +37,17 @@
    <center>
       <VBox alignment="CENTER" prefHeight="659.0" prefWidth="750.0" BorderPane.alignment="CENTER">
          <children>
-            <DialogPane />
             <Label text="Bienvenido a SupermarketBBDD">
                <font>
-                  <Font size="36.0" />
+                  <Font name="System Bold Italic" size="48.0" />
                </font>
             </Label>
+            <ImageView fitHeight="359.0" fitWidth="429.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo2.png" />
+               </image>
+            </ImageView>
+            <DialogPane />
          </children>
       </VBox>
    </center>
