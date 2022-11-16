@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aplications2.TablaController">
+    <center>
+        <TableView fx:id="table_info" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="column_id" prefWidth="75.0" text="id" />
+                <TableColumn fx:id="column_name" prefWidth="132.0" text="nombre" />
+                <TableColumn fx:id="column_codigo" prefWidth="167.0" text="codigo" />
+                <TableColumn fx:id="column_grupo" prefWidth="249.0" text="grupo" />
+                <TableColumn fx:id="column_familia" prefWidth="167.0" text="familia" />
+                <TableColumn fx:id="col_update" prefWidth="176.0" text="edit" />
+            </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+        </TableView>
+    </center>
+   <top>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tabla De Productos" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Text>
+   </top>
+</BorderPane>
