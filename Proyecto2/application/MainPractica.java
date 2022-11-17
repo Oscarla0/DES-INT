@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -21,7 +22,7 @@ public class MainPractica extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainPractica.class.getResource("Menu.fxml"));
 			rootLayout = (BorderPane) loader.load();
-			
+	
 			// Pasamos al controlador de menu el objeto con el BorderPane principal
 			MenuController menuController = loader.getController();
 			menuController.setRootLayout(rootLayout);
@@ -41,6 +42,8 @@ public class MainPractica extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	//Boton de Cerrar la aplicacion con dialogos.
 		public void logout(Stage stage){	
 			
 			Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -53,8 +56,8 @@ public class MainPractica extends Application {
 				stage.close();
 			} 
 		}
-
-
+		
+		
 	public static void main(String[] args) {
 		launch(args);
 	}

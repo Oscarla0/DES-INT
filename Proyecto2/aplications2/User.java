@@ -1,49 +1,25 @@
 package aplications2;
 
-import javafx.collections.ObservableList;
-import javafx.scene.control.Button;
+import java.util.Objects;
+
+
 
 public class User {
 
     /*Add the strings and buttons to be used in the application*/
-    String id, name, codigo, grupo,cantidad,familia;
+   private String  name, codigo, grupo,cantidad,familia;
 
-    Button update;
 
     /* Constructors */
-    public User(String id, String name, String codigo, String grupo,String familia, String string, Button update) {
-        this.id = id;
+    public User(String name, String codigo, String grupo,String familia) {
         this.name = name;
         this.codigo = codigo;
         this.grupo = grupo;
         this.familia=familia;
-        this.update = update;
-
-        update.setOnAction(e -> {
-            ObservableList<User> users = TablaController.table_info_app.getSelectionModel().getSelectedItems();
-
-            for (User user : users) {
-                if (user.getUpdate() == update) {
-                    System.out.println("id: " + user.getId());
-                    System.out.println("Nombre: " + user.getName());
-                    System.out.println("Codigo: " + user.getCodigo());
-                    System.out.println("Grupo: " + user.getGrupo());
-                    System.out.println("Familia: " + user.getFamilia());
-                    
-                }
-            }
-        });
     }
 
 
 	/* Getters and setters */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -94,7 +70,30 @@ public class User {
 	}
 
 
-	public Button getUpdate() {
-        return update;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final User other = (User) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.codigo, other.codigo)) {
+            return false;
+        }
+        if (!Objects.equals(this.grupo, other.grupo)) {
+            return false;
+        }
+        if (!Objects.equals(this.familia, other.familia)) {
+            return false;
+        }
+        return true;
     }
 }

@@ -2,79 +2,219 @@ package aplications2;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+public class TablaController  implements Initializable {
+	
 
-public class TablaController implements Initializable {
-    public static TableView<User> table_info_app;
-    public static ObservableList<User> data_table;
+
+
     @FXML
-    private TableView<User> table_info;
+    public  TableView<User> table_info;
+
+    public ObservableList<User> user;
+   
     @FXML
-    private TableColumn<User, String> column_id, column_name, column_codigo,column_grupo, column_familia;
+    private TableColumn<User, String> column_name, column_codigo,column_grupo, column_familia;
     @FXML
     private TableColumn<User, Button> col_update;
+    @FXML
+    private TextField TextFieldCodigo;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        table_info_app = table_info;
+    @FXML
+    private TextField TextFieldFamilia;
 
-        initializeCols();
-        loadData();
+    @FXML
+    private TextField TextFieldGrupo;
+
+    @FXML
+    private TextField TextFieldNombre;
+    
+    @FXML
+    private Button ADD;
+
+    @FXML
+    private Button Delete;
+
+    @FXML
+    private Button Edit;
+        /**
+         * Initializes the controller class.
+         */
+        @Override
+        public void initialize(URL url, ResourceBundle rb) {
+        	user = FXCollections.observableArrayList();
+
+            this.column_name.setCellValueFactory(new PropertyValueFactory("Name"));
+            this.column_codigo.setCellValueFactory(new PropertyValueFactory("Codigo"));
+            this.column_grupo.setCellValueFactory(new PropertyValueFactory("Grupo"));
+            this.column_familia.setCellValueFactory(new PropertyValueFactory("Familia"));
+        }
+
+        @FXML
+        private void agregarDatos(ActionEvent event) {
+
+            try {
+
+                // Obtengo los datos del formulario
+                String Nombre = this.TextFieldNombre.getText();
+                String Codigo = this.TextFieldCodigo.getText();
+                String Grupo = this.TextFieldGrupo.getText();
+                String Familia = this.TextFieldFamilia.getText();
+
+                // Creo una persona
+                User u = new User(Nombre, Codigo, Grupo,Familia);
+
+                // Compruebo si la persona esta en el lista
+                if (!this.user.contains(u)) {
+                    // Lo añado a la lista
+                    this.user.add(u);
+                    // Seteo los items
+                    this.table_info.setItems(user);
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Info");
+                    alert.setContentText("Persona añadida");
+                    alert.showAndWait();
+                } else {
+
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Error");
+                    alert.setContentText("La persona existe");
+                    alert.showAndWait();
+                }
+            } catch (NumberFormatException e) {
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("Formato incorrecto");
+                alert.showAndWait();
+            }
+
+        }
+
+        @FXML
+        private void seleccionar(MouseEvent event) {
+
+            // Obtengo la persona seleccionada
+            User u = this.table_info.getSelectionModel().getSelectedItem();
+
+            // Sino es nula seteo los campos
+            if (u != null) {
+                this.TextFieldNombre.setText(u.getName());
+                this.TextFieldCodigo.setText(u.getCodigo());
+                this.TextFieldGrupo.setText(u.getGrupo());
+                this.TextFieldFamilia.setText(u.getFamilia());
+            }
+
+        }
+
+        @FXML
+        private void modificar(ActionEvent event) {
+
+            // Obtengo la persona seleccionada
+            User u = this.table_info.getSelectionModel().getSelectedItem();
+
+            // Si la persona es nula, lanzo error
+            if (u == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("Debes seleccionar una persona");
+                alert.showAndWait();
+            } else {
+
+                try {
+                    // Obtengo los datos del formulario
+                	String Nombre = this.TextFieldNombre.getText();
+                    String Codigo = this.TextFieldCodigo.getText();
+                    String Grupo = this.TextFieldGrupo.getText();
+                    String Familia = this.TextFieldFamilia.getText();
+
+                    // Creo una persona
+                    User ux = new User(Nombre, Codigo, Grupo,Familia);
+
+                    // Compruebo si la persona esta en el lista
+                    if (!this.user.contains(ux)) {
+
+                        // Modifico el objeto
+                        u.setName(ux.getName());
+                        u.setCodigo(ux.getCodigo());
+                        u.setGrupo(ux.getGrupo());
+                        u.setFamilia(ux.getFamilia());
+
+                        // Refresco la tabla
+                        this.table_info.refresh();
+
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setHeaderText(null);
+                        alert.setTitle("Info");
+                        alert.setContentText("Persona modificada");
+                        alert.showAndWait();
+
+                    } else {
+
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setHeaderText(null);
+                        alert.setTitle("Error");
+                        alert.setContentText("La persona existe");
+                        alert.showAndWait();
+                    }
+                } catch (NumberFormatException e) {
+
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Error");
+                    alert.setContentText("Formato incorrecto");
+                    alert.showAndWait();
+                }
+
+            }
+
+        }
+
+        @FXML
+        private void eliminar(ActionEvent event) {
+
+            // Obtengo la persona seleccionada
+            User u = this.table_info.getSelectionModel().getSelectedItem();
+
+            // Si la persona es nula, lanzo error
+            if (u == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("Debes seleccionar una persona");
+                alert.showAndWait();
+            } else {
+
+                // La elimino de la lista
+                this.user.remove(u);
+                // Refresco la lista
+                this.table_info.refresh();
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Info");
+                alert.setContentText("Persona eliminada");
+                alert.showAndWait();
+
+            }
+
+        }
+
     }
-
-    private void initializeCols() {
-        
-
-        column_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        column_name.setCellValueFactory(new PropertyValueFactory<>("Name"));
-        column_codigo.setCellValueFactory(new PropertyValueFactory<>("Codigo"));
-        column_grupo.setCellValueFactory(new PropertyValueFactory<>("Grupo"));
-        column_familia.setCellValueFactory(new PropertyValueFactory<>("Familia"));
-        col_update.setCellValueFactory(new PropertyValueFactory<>("update"));
-        editableCols();
-    }
-
-    private void editableCols() {
-        column_id.setCellFactory(TextFieldTableCell.forTableColumn());
-        column_id.setOnEditCommit(e -> e.getTableView().getItems().get(e.getTablePosition().getRow()).setId(e.getNewValue()));
-
-        column_name.setCellFactory(TextFieldTableCell.forTableColumn());
-        column_name.setOnEditCommit(e -> e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue()));
-
-        column_codigo.setCellFactory(TextFieldTableCell.forTableColumn());
-        column_codigo.setOnEditCommit(e -> e.getTableView().getItems().get(e.getTablePosition().getRow()).setCodigo(e.getNewValue()));
-
-        column_grupo.setCellFactory(TextFieldTableCell.forTableColumn());
-        column_grupo.setOnEditCommit(e -> e.getTableView().getItems().get(e.getTablePosition().getRow()).setGrupo(e.getNewValue()));
-        column_familia.setCellFactory(TextFieldTableCell.forTableColumn());
-        column_familia.setOnEditCommit(e -> e.getTableView().getItems().get(e.getTablePosition().getRow()).setFamilia(e.getNewValue()));
-
-        table_info.setEditable(true);
-    }
-
-    private void loadData() {
-    	int x = 0;
-        data_table = FXCollections.observableArrayList(
-        new User(String.valueOf(x)+1,"Cocacola", "4894x1564", "Bebida","Refresco con Gas","Refresco con Gas", new Button("Actualizar")),
-	    new User(String.valueOf(x)+2,"Bezoya", "x16461894", "Bebida","Agua","Agua", new Button("Actualizar")),
-	    new User(String.valueOf(x)+3,"Danone", "1564623148", "Bebida","Yogurt","Yogurt", new Button("Actualizar")),
-	    new User(String.valueOf(x)+4,"Actumel", "24861w6841", "Bebida","Yogurt","Yogurt", new Button("Actualizar")),
-	    new User(String.valueOf(x)+5,"CampoFrio", "a654831s5", "Embutidos","Chopet","Chopet", new Button("Actualizar")),
-	    new User(String.valueOf(x)+6,"Lays", "a654831s5", "Alimentacion","Fritos","Fritos", new Button("Actualizar")),
-	    new User(String.valueOf(x)+7,"Pringles", "a654831s5", "Alimentacion","Fritos","Fritos", new Button("Actualizar")),
-	    new User(String.valueOf(x),"", "", "","","", new Button("Añadir")),
-        new User(String.valueOf(x),"", "", "","","", new Button("Añadir")),
-        new User(String.valueOf(x),"", "", "","","", new Button("Añadir")));
-        
-        table_info.setItems(data_table);
-    }
-}
