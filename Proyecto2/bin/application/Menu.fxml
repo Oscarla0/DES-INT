@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+   <top>
+      <MenuBar prefHeight="0.0" prefWidth="750.0" BorderPane.alignment="CENTER">	
+        <menus>
+          <Menu mnemonicParsing="false" text="Articulos">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#abrirListado1" text="Listado" />
+              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Inicio" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#abrirListado2" text="Sobre" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="659.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Bienvenido a SupermarketBBDD">
+               <font>
+                  <Font name="System Bold Italic" size="48.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="359.0" fitWidth="429.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo2.png" />
+               </image>
+            </ImageView>
+            <DialogPane />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
