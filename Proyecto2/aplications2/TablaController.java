@@ -11,8 +11,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
-import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 public class TablaController  implements Initializable {
@@ -78,10 +78,10 @@ public class TablaController  implements Initializable {
                 String Grupo = this.TextFieldGrupo.getText();
                 String Familia = this.TextFieldFamilia.getText();
 
-                // Creo una persona
+                // Creo una producto
                 User u = new User(Nombre, Codigo, Grupo,Familia);
 
-                // Compruebo si la persona esta en el lista
+                // Compruebo si la producto esta en el lista
                 if (!this.user.contains(u)) {
                     // Lo añado a la lista
                     this.user.add(u);
@@ -91,16 +91,21 @@ public class TablaController  implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setHeaderText(null);
                     alert.setTitle("Info");
-                    alert.setContentText("Persona añadida");
+                    alert.setContentText("Producto añadido");
                     alert.showAndWait();
                 } else {
 
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setHeaderText(null);
                     alert.setTitle("Error");
-                    alert.setContentText("La persona existe");
+                    alert.setContentText("El producto existe");
                     alert.showAndWait();
                 }
+                System.out.println("Nombre del producto añadido: "+Nombre);
+                System.out.println("Codigo del producto añadido:: "+Codigo);
+                System.out.println("Grupo del producto añadido:: "+Grupo);
+                System.out.println("Familia del producto añadido:: "+Familia);
+                
             } catch (NumberFormatException e) {
 
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -109,13 +114,13 @@ public class TablaController  implements Initializable {
                 alert.setContentText("Formato incorrecto");
                 alert.showAndWait();
             }
-
+            	
         }
 
         @FXML
         private void seleccionar(MouseEvent event) {
 
-            // Obtengo la persona seleccionada
+            // Obtengo el producto seleccionada
             User u = this.table_info.getSelectionModel().getSelectedItem();
 
             // Sino es nula seteo los campos
@@ -125,21 +130,20 @@ public class TablaController  implements Initializable {
                 this.TextFieldGrupo.setText(u.getGrupo());
                 this.TextFieldFamilia.setText(u.getFamilia());
             }
-
         }
 
         @FXML
         private void modificar(ActionEvent event) {
 
-            // Obtengo la persona seleccionada
+            // Obtengo la producto seleccionada
             User u = this.table_info.getSelectionModel().getSelectedItem();
 
-            // Si la persona es nula, lanzo error
+            // Si la producto es nula, lanzo error
             if (u == null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
                 alert.setTitle("Error");
-                alert.setContentText("Debes seleccionar una persona");
+                alert.setContentText("Debes seleccionar un producto");
                 alert.showAndWait();
             } else {
 
@@ -150,10 +154,10 @@ public class TablaController  implements Initializable {
                     String Grupo = this.TextFieldGrupo.getText();
                     String Familia = this.TextFieldFamilia.getText();
 
-                    // Creo una persona
+                    // Creo una producto
                     User ux = new User(Nombre, Codigo, Grupo,Familia);
 
-                    // Compruebo si la persona esta en el lista
+                    // Compruebo si la producto esta en el lista
                     if (!this.user.contains(ux)) {
 
                         // Modifico el objeto
@@ -168,7 +172,7 @@ public class TablaController  implements Initializable {
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setHeaderText(null);
                         alert.setTitle("Info");
-                        alert.setContentText("Persona modificada");
+                        alert.setContentText("producto modificada");
                         alert.showAndWait();
 
                     } else {
@@ -176,9 +180,14 @@ public class TablaController  implements Initializable {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setHeaderText(null);
                         alert.setTitle("Error");
-                        alert.setContentText("La persona existe");
+                        alert.setContentText("La producto existe");
                         alert.showAndWait();
                     }
+                    
+                    System.out.println("Nombre del producto modificado: "+Nombre);
+                    System.out.println("Codigo del producto modificado: "+Codigo);
+                    System.out.println("Grupo del producto modificado: "+Grupo);
+                    System.out.println("Familia del producto modificado: "+Familia);
                 } catch (NumberFormatException e) {
 
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -195,15 +204,15 @@ public class TablaController  implements Initializable {
         @FXML
         private void eliminar(ActionEvent event) {
 
-            // Obtengo la persona seleccionada
+            // Obtengo el producto seleccionada
             User u = this.table_info.getSelectionModel().getSelectedItem();
 
-            // Si la persona es nula, lanzo error
+            // Si el producto es nula, lanzo error
             if (u == null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
                 alert.setTitle("Error");
-                alert.setContentText("Debes seleccionar una persona");
+                alert.setContentText("Debes seleccionar una producto");
                 alert.showAndWait();
             } else {
 
@@ -215,11 +224,13 @@ public class TablaController  implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setHeaderText(null);
                 alert.setTitle("Info");
-                alert.setContentText("Persona eliminada");
+                alert.setContentText("Producto eliminada");
                 alert.showAndWait();
 
             }
+            System.out.print("Eliminada Correctamente");
 
         }
+
 
     }

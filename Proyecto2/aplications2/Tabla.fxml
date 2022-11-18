@@ -11,7 +11,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aplications2.TablaController">
     <center>
-        <TableView fx:id="table_info" BorderPane.alignment="CENTER">
+        <TableView fx:id="table_info" onMouseClicked="#seleccionar" BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn fx:id="column_name" prefWidth="132.0" text="nombre" />
                 <TableColumn fx:id="column_codigo" prefWidth="167.0" text="codigo" />
