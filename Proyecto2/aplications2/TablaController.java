@@ -60,6 +60,11 @@ public class TablaController  implements Initializable {
             this.column_codigo.setCellValueFactory(new PropertyValueFactory("Codigo"));
             this.column_grupo.setCellValueFactory(new PropertyValueFactory("Grupo"));
             this.column_familia.setCellValueFactory(new PropertyValueFactory("Familia"));
+            
+            
+            
+            
+            
         }
 
         @FXML

@@ -23,7 +23,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Ayuda">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#abrirListado2" text="Sobre" />
+              <MenuItem mnemonicParsing="false" onAction="#abrirListado2" text="Tutorial" />
             </items>
           </Menu>
         </menus>
