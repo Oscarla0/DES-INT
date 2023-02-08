@@ -5,23 +5,28 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.TextFieldTreeCell;
 
-public class TreeviewController {
+/**
+* Tree Items
+*/
 
+
+public class TreeviewController {
+	
     @FXML
     private TreeView<String> AyudaTree;
 	 @FXML
 	    private void initialize() {   
 	              
-	        // Ítems para el TreeView
-	        // Ítem raíz
+	        // items para el TreeView
+	        // item raiz
 	        TreeItem<String> rootItem = new TreeItem<String>("Uso de la aplicacion");
 
-	        // Ítem de primer nivel
+	        // item de primer nivel
 	        TreeItem<String> Listado = new TreeItem<String>("Listado");
 	        rootItem.getChildren().add(Listado);
 	        Listado.setExpanded(true);
 	        
-	        // Otro ítem de primer nivel
+	        // Otro item de primer nivel
 	        TreeItem<String> Tabla = new TreeItem<String>("Tabla");
 	        Tabla.getChildren().add(new TreeItem<String>("Muestra los datos que introduzcas."));
 	        Listado.getChildren().add(Tabla);
@@ -49,17 +54,23 @@ public class TreeviewController {
 	        
 	        //Button
 	        TreeItem<String> Botones = new TreeItem<String>("Botones");
-	        Botones.getChildren().add(new TreeItem<String>("Se diferencian en tres botones , Añadir, Eliminar y Editar."));
+	        Botones.getChildren().add(new TreeItem<String>("Se diferencian en tres botones , Aiadir, Eliminar y Editar."));
 	        rootItem.getChildren().add(Botones);
 	        // Para que sea editable necesitamos especificar un CellFactory con el tipo que corresponda
 	        AyudaTree.setCellFactory(TextFieldTreeCell.forTreeView());
 	        
-	        // Expadimos por defecto el ítem raíz
+	        // Expadimos por defecto el item raiz
 	        rootItem.setExpanded(true); 
 	        AyudaTree.setRoot(rootItem);     
 	        System.out.println(AyudaTree.getExpandedItemCount());
 	    }
-	    
+	 /**
+	 * Tree Items
+	 * Constructor 
+	 */
+	    public TreeviewController() {
+	    	
+	    }
 	}
 
 

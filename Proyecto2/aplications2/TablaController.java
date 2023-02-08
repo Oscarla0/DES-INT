@@ -83,7 +83,7 @@ public class TablaController  implements Initializable {
 
                 // Compruebo si la producto esta en el lista
                 if (!this.user.contains(u)) {
-                    // Lo añado a la lista
+                    // Lo anado a la lista
                     this.user.add(u);
                     // Seteo los items
                     this.table_info.setItems(user);
@@ -91,7 +91,7 @@ public class TablaController  implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setHeaderText(null);
                     alert.setTitle("Info");
-                    alert.setContentText("Producto añadido");
+                    alert.setContentText("Producto anadido");
                     alert.showAndWait();
                 } else {
 
@@ -101,10 +101,10 @@ public class TablaController  implements Initializable {
                     alert.setContentText("El producto existe");
                     alert.showAndWait();
                 }
-                System.out.println("Nombre del producto añadido: "+Nombre);
-                System.out.println("Codigo del producto añadido:: "+Codigo);
-                System.out.println("Grupo del producto añadido:: "+Grupo);
-                System.out.println("Familia del producto añadido:: "+Familia);
+                System.out.println("Nombre del producto anadido: "+Nombre);
+                System.out.println("Codigo del producto anadido:: "+Codigo);
+                System.out.println("Grupo del producto anadido:: "+Grupo);
+                System.out.println("Familia del producto anadido:: "+Familia);
                 
             } catch (NumberFormatException e) {
 

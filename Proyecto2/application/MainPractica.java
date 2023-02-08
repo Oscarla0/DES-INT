@@ -1,5 +1,11 @@
 package application;
-	
+/**
+* Clase Main donde se inicia la aplicaciÃ³n
+*
+* @author Alumno DAM
+* @version 1.0
+*
+*/
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,7 +24,7 @@ public class MainPractica extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			// Carga el diseño del archivo FXML en la variable rootLayout
+			// Carga el diseno del archivo FXML en la variable rootLayout
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainPractica.class.getResource("Menu.fxml"));
 			rootLayout = (BorderPane) loader.load();
@@ -31,7 +37,7 @@ public class MainPractica extends Application {
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("BBDD");
-			primaryStage.setResizable(false);
+			scene.getStylesheets().add("estilosCss/estilocss.css");
 			primaryStage.show();
 			
 			primaryStage.setOnCloseRequest(event -> {
@@ -48,7 +54,7 @@ public class MainPractica extends Application {
 			
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("Cerrar");
-			alert.setHeaderText("Cerrando Aplicación");
+			alert.setHeaderText("Cerrando Aplicacion");
 			alert.setContentText("Quieres guardar antes de cerrar?");
 			
 			if (alert.showAndWait().get() == ButtonType.OK){

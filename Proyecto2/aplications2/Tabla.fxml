@@ -24,7 +24,7 @@
         </TableView>
     </center>
    <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tabla De Productos" BorderPane.alignment="CENTER">
+      <Text id="titulo" strokeType="OUTSIDE" strokeWidth="0.0" text="Tabla De Productos" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="36.0" />
          </font>
@@ -37,9 +37,9 @@
             <TextField fx:id="TextFieldGrupo" layoutX="26.0" layoutY="40.0" promptText="Grupo" />
             <TextField fx:id="TextFieldCodigo" layoutX="191.0" layoutY="2.0" promptText="Codigo" />
             <TextField fx:id="TextFieldFamilia" layoutX="191.0" layoutY="40.0" promptText="Familia" />
-            <Button fx:id="ADD" layoutX="372.0" layoutY="28.0" mnemonicParsing="false" onAction="#agregarDatos" text="Add" />
-            <Button fx:id="Delete" layoutX="431.0" layoutY="28.0" mnemonicParsing="false" onAction="#eliminar" text="Delete" />
-            <Button fx:id="Edit" layoutX="495.0" layoutY="27.0" mnemonicParsing="false" onAction="#modificar" text="Edit" />
+            <Button fx:id="ADD" layoutX="369.0" layoutY="27.0" mnemonicParsing="false" onAction="#agregarDatos" text="Add" />
+            <Button fx:id="Delete" layoutX="431.0" layoutY="27.0" mnemonicParsing="false" onAction="#eliminar" text="Delete" />
+            <Button fx:id="Edit" layoutX="508.0" layoutY="27.0" mnemonicParsing="false" onAction="#modificar" text="Edit" />
          </children>
       </AnchorPane>
    </bottom>

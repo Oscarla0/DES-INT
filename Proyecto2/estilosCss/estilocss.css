@@ -1,0 +1,43 @@
+#titulo { -fx-font-family: "Hervetica"; 
+         -fx-font-style: italic;
+         -fx-font-size: 36px;
+         -fx-text-fill: #FFFFFF;
+}
+
+Button { -fx-background-color: #008287;
+         -fx-border-color: #FFFFFF;
+         -fx-border-width: 2;
+         -fx-text-fill: #FFFFFF;
+         -fx-font-family: "Times New Roman";
+         -fx-font-style: italic;
+         -fx-font-size: 15px;
+         -fx-background-radius: 10 10 10 10;
+         -fx-border-radius: 10 10 10 10;
+}
+
+
+
+Button:hover { -fx-background-color: #333333;
+               -fx-font-size: 20px;
+}
+
+Button:pressed { -fx-background-color: #FFFFFF;
+	-fx-text-fill: #000000;
+	-fx-font-weight: bold;
+}
+/*Pie */
+.default-color0.chart-pie{-fx-pie-color:#e93287;}
+.default-color1.chart-pie{-fx-pie-color:#9a32e9;}
+.default-color2.chart-pie{-fx-pie-color:#8a2be2;}
+.default-color3.chart-pie{-fx-pie-color:#b972f0;}
+.default-color4.chart-pie{-fx-pie-color:#ff00ff;}
+.default-color5.chart-pie{-fx-pie-color:#4d216e;}
+.default-color6.chart-pie{-fx-pie-color:#9d1bff;}
+
+/*Line */
+.default-color0.chart-series-line { -fx-stroke: green; }
+.default-color1.chart-series-line { -fx-stroke: black; }
+/*stacked Area */
+.default-color1.chart-series-area-line { -fx-stroke:black; }
+.default-color1.chart-series-area-fill { -fx-fill: #d8bfd833; }
+.default-color1.chart-area-symbol { -fx-background-color: black,white; }

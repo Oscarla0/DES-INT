@@ -26,6 +26,12 @@
               <MenuItem mnemonicParsing="false" onAction="#abrirListado2" text="Tutorial" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Graficos">
+            
+            	<items><MenuItem mnemonicParsing="false" onAction="#abrirGrafico1" text="Grafica1PieChart" /></items>
+            	<items><MenuItem mnemonicParsing="false" onAction="#abrirGrafico2" text="Grafica2LineChart" /></items>
+               <items><MenuItem mnemonicParsing="false" onAction="#abrirGrafico3" text="Grafica3StackedAreaChart" /></items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

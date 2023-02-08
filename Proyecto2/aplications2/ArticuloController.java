@@ -36,8 +36,8 @@ public class ArticuloController {
 
     @FXML
     private void initialize() {   
-        // Controles de JavaFX a los que se añaden directamente los items 
-    	// Ítems del ChoiceBox
+        // Controles de JavaFX a los que se anaden directamente los items 
+    	// items del ChoiceBox
     	ChoiceDptTpv.getItems().addAll("","Alimentacion", "Bazar", "Bebidas", "Bodega", "Bolleria", 
         		"Carniceria", "Cerveza");      
     	ChoiceFamilia.getItems().addAll("","Choice1", "Choice2", "Choice3", "Choice4", "Choice5", 
