@@ -1,0 +1,31 @@
+﻿<Window x:Class="AppJuego.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppJuego"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/clouds2.png"/>
+        </Grid.Background>
+
+        <Menu HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="95">
+        </Menu>
+        <Button Content="Inicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Click="Button_Click_Inicio" Height="30" Margin="95,0,0,0"/>
+
+        <Label x:Name="TITULO_INCIAL" Content="OsAleJuegos" HorizontalAlignment="Left" Margin="358,10,0,0" VerticalAlignment="Top" Width="101" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,157,0,0" TextWrapping="Wrap" Text="Juego de la semana" VerticalAlignment="Top" Height="31" Width="175" FontSize="20"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="358,42,0,0" VerticalAlignment="Top" Width="101" Source="Images/645-6457086_logo-de-los-videojuegos-hd-png-download.png"/>
+        <Image HorizontalAlignment="Left" Height="174" Margin="100,214,0,0" VerticalAlignment="Top" Width="175" Source="Images/descarga.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="306,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="100" FontSize="16" FontWeight="Bold"><Run Text="Pato Saltarin"/><LineBreak/><Run/></TextBlock>
+        <Button Content="Siguiente" HorizontalAlignment="Left" Margin="306,274,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="532,157,0,0" TextWrapping="Wrap" Text="Próximamente" VerticalAlignment="Top" RenderTransformOrigin="-2.234,-1.037" Height="31" Width="252" FontSize="20"/>
+
+        <Image HorizontalAlignment="Left" Height="84" Margin="541,193,0,0" VerticalAlignment="Top" Width="121" Source="Images/icon.png">
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Margin="650,207,0,0" TextWrapping="Wrap" Text="Coche Saltarin" VerticalAlignment="Top" Width="134" Height="30" FontSize="16" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="650,326,0,0" TextWrapping="Wrap" Text="Humano Saltarin" VerticalAlignment="Top" Width="134" FontSize="16" FontWeight="Bold"/>
+    </Grid>
+</Window>
